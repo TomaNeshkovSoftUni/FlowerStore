@@ -1,0 +1,31 @@
+# Build резултати
+bin/
+obj/
+out/
+publish/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.userprefs
+
+# Тестове и покритие
+TestResults/
+coverage/
+*.coverage
+
+# Чувствителни и локални файлове - НИКОГА в GitHub
+secrets.json
+appsettings.*.local.json
+appsettings.Production.json
+.env
+*.pfx
+*.mdf
+*.ldf
+
+# Системни
+.DS_Store
+Thumbs.db

@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FlowerShop.Data/FlowerShop.Data.csproj" />
+    <Project Path="src/FlowerShop.Services/FlowerShop.Services.csproj" />
+    <Project Path="src/FlowerShop.Web/FlowerShop.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FlowerShop.Tests/FlowerShop.Tests.csproj" />
+  </Folder>
+</Solution>
