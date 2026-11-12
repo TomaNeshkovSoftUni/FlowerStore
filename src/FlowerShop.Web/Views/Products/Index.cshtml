@@ -1,0 +1,38 @@
+@model ProductsIndexViewModel
+@{
+    ViewData["Title"] = "Продукти";
+}
+
+<h1 class="h3 mb-3">Нашите цветя</h1>
+
+<form method="get" class="row g-2 mb-4">
+    <div class="col-md-5">
+        <input type="text" name="search" value="@Model.Search" class="form-control" placeholder="Търсене по име..." />
+    </div>
+    <div class="col-md-4">
+        <select name="categoryId" class="form-select">
+            <option value="">Всички категории</option>
+            @foreach (var category in Model.Categories)
+            {
+                <option value="@category.Id" selected="@(category.Id == Model.SelectedCategoryId)">@category.Name</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3 d-grid">
+        <button type="submit" class="btn btn-danger">Търси</button>
+    </div>
+</form>
+
+@if (Model.Products.Count == 0)
+{
+    <div class="alert alert-info">Няма намерени продукти.</div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+        @foreach (var product in Model.Products)
+        {
+            <div class="col"><partial name="_ProductCard" model="product" /></div>
+        }
+    </div>
+}

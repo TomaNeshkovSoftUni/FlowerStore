@@ -1,0 +1,13 @@
+:root {
+    --brand: #c2185b;
+}
+
+.text-brand {
+    color: var(--brand);
+}
+
+.product-img {
+    height: 200px;
+    object-fit: cover;
+    background: #fdf2f6;
+}

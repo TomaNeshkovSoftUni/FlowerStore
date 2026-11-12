@@ -1,0 +1,29 @@
+@model List<OrderListItemViewModel>
+@{
+    ViewData["Title"] = "Моите поръчки";
+}
+
+<h1 class="h3 mb-3">Моите поръчки</h1>
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info">Все още нямате поръчки.</div>
+}
+else
+{
+    <table class="table align-middle">
+        <thead><tr><th>№</th><th>Дата</th><th>Доставка</th><th>Статус</th><th>Сума</th></tr></thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.CreatedOn.ToString("dd.MM.yyyy")</td>
+                    <td>@order.DeliveryDate.ToString("dd.MM.yyyy")</td>
+                    <td>@order.Status</td>
+                    <td>@order.TotalPrice.ToString("0.00") &euro;</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

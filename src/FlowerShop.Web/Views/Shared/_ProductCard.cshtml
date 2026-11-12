@@ -1,0 +1,11 @@
+@model ProductListItemViewModel
+
+<div class="card h-100 shadow-sm">
+    <img src="@(Model.ImageUrl ?? "/images/placeholder.svg")" class="card-img-top product-img" alt="@Model.Name" />
+    <div class="card-body d-flex flex-column">
+        <span class="badge text-bg-light align-self-start mb-2">@Model.CategoryName</span>
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="fw-bold mt-auto mb-2">@Model.Price.ToString("0.00") &euro;</p>
+        <a class="btn btn-outline-danger btn-sm" asp-controller="Products" asp-action="Details" asp-route-id="@Model.Id">Виж повече</a>
+    </div>
+</div>

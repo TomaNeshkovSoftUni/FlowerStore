@@ -1,0 +1,19 @@
+@model ProductDetailsViewModel
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="row g-4">
+    <div class="col-md-5">
+        <img src="@(Model.ImageUrl ?? "/images/placeholder.svg")" class="img-fluid rounded shadow-sm" alt="@Model.Name" />
+    </div>
+    <div class="col-md-7">
+        <span class="badge text-bg-light mb-2">@Model.CategoryName</span>
+        <h1 class="h2">@Model.Name</h1>
+        <p class="fs-4 fw-bold">@Model.Price.ToString("0.00") &euro;</p>
+        <p>@Model.Description</p>
+        <p class="text-muted">Наличност: @Model.StockQuantity бр.</p>
+        <a class="btn btn-outline-secondary" asp-action="Index">&larr; Към каталога</a>
+        @* TODO (Етап 2): бутон "Добави в количката" *@
+    </div>
+</div>
